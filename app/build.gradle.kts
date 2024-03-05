@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.agrospherecontrolcenter"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.agrospherecontrolcenter"
@@ -15,7 +15,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures{
+        viewBinding = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
