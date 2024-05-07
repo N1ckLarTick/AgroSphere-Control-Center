@@ -38,10 +38,22 @@ tools:context=".MainActivity">
             android:text="wet" />
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/emailText"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+    <Button
+        android:id="@+id/logoutbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="430dp"
+        android:layout_height="300dp"
         android:orientation="horizontal">
 
 
