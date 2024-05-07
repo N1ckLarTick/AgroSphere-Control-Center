@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "432858721059",
+    "project_id": "agrosphere-control-center",
+    "storage_bucket": "agrosphere-control-center.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432858721059:android:07607757cd3594d624fa96",
+        "android_client_info": {
+          "package_name": "com.example.agrospherecontrolcenter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5NRn5BAGSHqcWuwtj5M5C-OXFQ9CmcT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
