@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.agrospherecontrolcenter.R;
@@ -18,10 +18,22 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button button;
+  public final TextView btDevices;
+
+  @NonNull
+  public final TextView btDevicesText;
+
+  @NonNull
+  public final TextView btReadings;
+
+  @NonNull
+  public final TextView btReadingsText;
+
+  @NonNull
+  public final Button connectToDevice;
 
   @NonNull
   public final TextView emailText;
@@ -29,17 +41,32 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Button logoutbutton;
 
-  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull Button button,
-      @NonNull TextView emailText, @NonNull Button logoutbutton) {
+  @NonNull
+  public final Button refresh;
+
+  @NonNull
+  public final Button seachDevices;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView btDevices,
+      @NonNull TextView btDevicesText, @NonNull TextView btReadings,
+      @NonNull TextView btReadingsText, @NonNull Button connectToDevice,
+      @NonNull TextView emailText, @NonNull Button logoutbutton, @NonNull Button refresh,
+      @NonNull Button seachDevices) {
     this.rootView = rootView;
-    this.button = button;
+    this.btDevices = btDevices;
+    this.btDevicesText = btDevicesText;
+    this.btReadings = btReadings;
+    this.btReadingsText = btReadingsText;
+    this.connectToDevice = connectToDevice;
     this.emailText = emailText;
     this.logoutbutton = logoutbutton;
+    this.refresh = refresh;
+    this.seachDevices = seachDevices;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -64,9 +91,33 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button;
-      Button button = ViewBindings.findChildViewById(rootView, id);
-      if (button == null) {
+      id = R.id.btDevices;
+      TextView btDevices = ViewBindings.findChildViewById(rootView, id);
+      if (btDevices == null) {
+        break missingId;
+      }
+
+      id = R.id.btDevicesText;
+      TextView btDevicesText = ViewBindings.findChildViewById(rootView, id);
+      if (btDevicesText == null) {
+        break missingId;
+      }
+
+      id = R.id.btReadings;
+      TextView btReadings = ViewBindings.findChildViewById(rootView, id);
+      if (btReadings == null) {
+        break missingId;
+      }
+
+      id = R.id.btReadingsText;
+      TextView btReadingsText = ViewBindings.findChildViewById(rootView, id);
+      if (btReadingsText == null) {
+        break missingId;
+      }
+
+      id = R.id.connectToDevice;
+      Button connectToDevice = ViewBindings.findChildViewById(rootView, id);
+      if (connectToDevice == null) {
         break missingId;
       }
 
@@ -82,7 +133,21 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, button, emailText, logoutbutton);
+      id = R.id.refresh;
+      Button refresh = ViewBindings.findChildViewById(rootView, id);
+      if (refresh == null) {
+        break missingId;
+      }
+
+      id = R.id.seachDevices;
+      Button seachDevices = ViewBindings.findChildViewById(rootView, id);
+      if (seachDevices == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, btDevices, btDevicesText,
+          btReadings, btReadingsText, connectToDevice, emailText, logoutbutton, refresh,
+          seachDevices);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

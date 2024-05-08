@@ -3224,7 +3224,10 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id button
+id btDevices
+id btDevicesText
+id btReadings
+id btReadingsText
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3250,6 +3253,7 @@ id closest
 id collapseActionView
 id compress
 id confirm_button
+id connectToDevice
 id constraint
 id container
 id content
@@ -3492,6 +3496,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id refresh
 id report_drawn
 id reverseSawtooth
 id right
@@ -3510,6 +3515,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id seachDevices
 id search_badge
 id search_bar
 id search_button
