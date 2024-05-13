@@ -74,7 +74,7 @@
         android:layout_marginStart="112dp"
         android:layout_marginTop="360dp"
         android:enabled="false"
-        android:text="Connect to HC-05"
+        android:text="Connect to HC-06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -97,9 +97,9 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="680dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/logoutbutton"
