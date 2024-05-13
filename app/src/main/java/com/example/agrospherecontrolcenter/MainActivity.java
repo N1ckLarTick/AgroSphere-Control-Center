@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +42,42 @@ public class MainActivity extends AppCompatActivity {
     private final static int ERROR_READ = 0;
     BluetoothDevice arduinoBTModule = null;
     UUID arduinoUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,
+            Manifest.permission.BLUETOOTH_SCAN,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH_PRIVILEGED
+    };
+    private static String[] PERMISSIONS_LOCATION = {
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,
+            Manifest.permission.BLUETOOTH_SCAN,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH_PRIVILEGED
+    };
+    private void checkPermissions(){
+        int permission1 = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permission2 = ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN);
+        if (permission1 != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    this,
+                    PERMISSIONS_STORAGE,
+                    1
+            );
+        } else if (permission2 != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(
+                    this,
+                    PERMISSIONS_LOCATION,
+                    1
+            );
+        }
+    }
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         Button seachDevices = (Button) findViewById(R.id.seachDevices);
         Button clearValues = (Button) findViewById(R.id.refresh);
         Log.d(TAG, "Begin Execution");
-
+        checkPermissions();
 
         handler = new Handler(Looper.getMainLooper()) {
             @Override
@@ -127,16 +164,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (bluetoothAdapter == null) {
-
-                    Log.d(TAG, "Device doesn't support Bluetooth");
+                    Toast.makeText(MainActivity.this, "Device doesn't support Bluetooth", Toast.LENGTH_SHORT).show();
+                    //Log.d(TAG, "Device doesn't support Bluetooth");
                 } else {
-                    Log.d(TAG, "Device support Bluetooth");
+                    Toast.makeText(MainActivity.this, "Device support Bluetooth", Toast.LENGTH_SHORT).show();
+                    //Log.d(TAG, "Device support Bluetooth");
 
                     if (!bluetoothAdapter.isEnabled()) {
                         Log.d(TAG, "Bluetooth is disabled");
                         Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-
                             Log.d(TAG, "We don't BT Permissions");
                             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
                             Log.d(TAG, "Bluetooth is enabled now");
@@ -147,11 +184,12 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     } else {
+                        Toast.makeText(MainActivity.this, "Bluetooth is enabled", Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "Bluetooth is enabled");
                     }
                     String btDevicesString="";
-                    Set < BluetoothDevice > pairedDevices = bluetoothAdapter.getBondedDevices();
-
+                    //Set <BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
+                    Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
                     if (pairedDevices.size() > 0) {
 
                         for (BluetoothDevice device: pairedDevices) {
@@ -162,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
                             btDevicesString=btDevicesString+deviceName+" || "+deviceHardwareAddress+"\n";
                             if (deviceName.equals("HC-06")) {
-                                Log.d(TAG, "HC-05 found");
+                                Log.d(TAG, "HC-06 found");
                                 arduinoUUID = device.getUuids()[0].getUuid();
                                 arduinoBTModule = device;
                                 connectToDevice.setEnabled(true);
