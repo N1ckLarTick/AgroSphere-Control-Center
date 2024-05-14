@@ -64,5 +64,10 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+        binding.signupText.setOnClickListener(view ->{
+            Intent intent = new Intent(getApplicationContext(), RegistrationActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 }

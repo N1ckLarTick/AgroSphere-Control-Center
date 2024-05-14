@@ -3374,6 +3374,8 @@ id linear
 id listMode
 id list_item
 id loginRedirectText
+id loginText
+id loginTextR
 id login_button
 id logo
 id logoutbutton
@@ -3482,6 +3484,7 @@ id parentPanel
 id parentRelative
 id parent_matrix
 id password
+id passwordText
 id password_toggle
 id path
 id pathRelative
@@ -3535,8 +3538,9 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id sign_up_button
+id signUpButton
 id signupRedirectText
+id signupText
 id sin
 id skipCollapsed
 id skipped
@@ -3902,6 +3906,8 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
+string e_mail
+string email
 string email_hint
 string error_a11y_label
 string error_icon_content_description
@@ -4022,7 +4028,9 @@ string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string password_confirm_hint
+string password_edittext
 string password_hint
+string password_text
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4036,6 +4044,7 @@ string searchview_navigation_content_description
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string sign_up
+string sign_up_textview
 string signupRedirectText
 string status_bar_notification_info_overflow
 string username_hint

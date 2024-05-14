@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,10 +20,16 @@ import java.lang.String;
 
 public final class ActivityRegistrationBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final TextView loginRedirectText;
+
+  @NonNull
+  public final TextView loginText;
+
+  @NonNull
+  public final TextView loginTextR;
 
   @NonNull
   public final ImageView logo;
@@ -32,25 +38,32 @@ public final class ActivityRegistrationBinding implements ViewBinding {
   public final EditText password;
 
   @NonNull
+  public final TextView passwordText;
+
+  @NonNull
   public final Button signUpButton;
 
   @NonNull
   public final EditText username;
 
-  private ActivityRegistrationBinding(@NonNull ScrollView rootView,
-      @NonNull TextView loginRedirectText, @NonNull ImageView logo, @NonNull EditText password,
-      @NonNull Button signUpButton, @NonNull EditText username) {
+  private ActivityRegistrationBinding(@NonNull LinearLayout rootView,
+      @NonNull TextView loginRedirectText, @NonNull TextView loginText,
+      @NonNull TextView loginTextR, @NonNull ImageView logo, @NonNull EditText password,
+      @NonNull TextView passwordText, @NonNull Button signUpButton, @NonNull EditText username) {
     this.rootView = rootView;
     this.loginRedirectText = loginRedirectText;
+    this.loginText = loginText;
+    this.loginTextR = loginTextR;
     this.logo = logo;
     this.password = password;
+    this.passwordText = passwordText;
     this.signUpButton = signUpButton;
     this.username = username;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -81,6 +94,18 @@ public final class ActivityRegistrationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.loginText;
+      TextView loginText = ViewBindings.findChildViewById(rootView, id);
+      if (loginText == null) {
+        break missingId;
+      }
+
+      id = R.id.loginTextR;
+      TextView loginTextR = ViewBindings.findChildViewById(rootView, id);
+      if (loginTextR == null) {
+        break missingId;
+      }
+
       id = R.id.logo;
       ImageView logo = ViewBindings.findChildViewById(rootView, id);
       if (logo == null) {
@@ -93,7 +118,13 @@ public final class ActivityRegistrationBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.sign_up_button;
+      id = R.id.passwordText;
+      TextView passwordText = ViewBindings.findChildViewById(rootView, id);
+      if (passwordText == null) {
+        break missingId;
+      }
+
+      id = R.id.signUpButton;
       Button signUpButton = ViewBindings.findChildViewById(rootView, id);
       if (signUpButton == null) {
         break missingId;
@@ -105,8 +136,8 @@ public final class ActivityRegistrationBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegistrationBinding((ScrollView) rootView, loginRedirectText, logo,
-          password, signUpButton, username);
+      return new ActivityRegistrationBinding((LinearLayout) rootView, loginRedirectText, loginText,
+          loginTextR, logo, password, passwordText, signUpButton, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

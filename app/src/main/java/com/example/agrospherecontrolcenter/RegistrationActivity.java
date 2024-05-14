@@ -64,6 +64,11 @@ public class RegistrationActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+        binding.loginTextR.setOnClickListener(view ->{
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
 }

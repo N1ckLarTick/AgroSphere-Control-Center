@@ -7,7 +7,12 @@
     <string name="password_confirm_hint">Confirm Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
-    <string name="signupRedirectText">Not yet registered? Signup</string>
-    <string name="loginRedirectText">Already an user? Login</string>
+    <string name="signupRedirectText">Not yet registered?</string>
+    <string name="loginRedirectText">Already an user?</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="email">Введите email</string>
+    <string name="password_text">Пароль</string>
+    <string name="password_edittext">Введите пароль</string>
+    <string name="sign_up_textview">Sign up</string>
 
 </resources>

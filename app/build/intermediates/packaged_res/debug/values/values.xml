@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">AgroSphere Control Center</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="email">Введите email</string>
     <string name="email_hint">Email</string>
     <string name="gcm_defaultSenderId" translatable="false">432858721059</string>
     <string name="google_api_key" translatable="false">AIzaSyC5NRn5BAGSHqcWuwtj5M5C-OXFQ9CmcT8</string>
@@ -10,12 +12,15 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC5NRn5BAGSHqcWuwtj5M5C-OXFQ9CmcT8</string>
     <string name="google_storage_bucket" translatable="false">agrosphere-control-center.appspot.com</string>
     <string name="login">Login</string>
-    <string name="loginRedirectText">Already an user? Login</string>
+    <string name="loginRedirectText">Already an user?</string>
     <string name="password_confirm_hint">Confirm Password</string>
+    <string name="password_edittext">Введите пароль</string>
     <string name="password_hint">Password</string>
+    <string name="password_text">Пароль</string>
     <string name="project_id" translatable="false">agrosphere-control-center</string>
     <string name="sign_up">Sign Up</string>
-    <string name="signupRedirectText">Not yet registered? Signup</string>
+    <string name="sign_up_textview">Sign up</string>
+    <string name="signupRedirectText">Not yet registered?</string>
     <string name="username_hint">Username</string>
     <style name="Base.Theme.AgroSphereControlCenter" parent="Theme.Material3.DayNight.NoActionBar">
         

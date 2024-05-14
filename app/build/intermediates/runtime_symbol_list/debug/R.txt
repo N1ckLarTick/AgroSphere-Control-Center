@@ -3373,6 +3373,8 @@ int id linear 0x7f0800fb
 int id listMode 0x7f0800fc
 int id list_item 0x7f0800fd
 int id loginRedirectText 0x7f0800fe
+int id loginText 0x7f080209
+int id loginTextR 0x7f08020c
 int id login_button 0x7f0800ff
 int id logo 0x7f080100
 int id logoutbutton 0x7f080101
@@ -3481,6 +3483,7 @@ int id parentPanel 0x7f080167
 int id parentRelative 0x7f080168
 int id parent_matrix 0x7f080169
 int id password 0x7f08016a
+int id passwordText 0x7f08020a
 int id password_toggle 0x7f08016b
 int id path 0x7f08016c
 int id pathRelative 0x7f08016d
@@ -3534,8 +3537,9 @@ int id shortcut 0x7f08019c
 int id showCustom 0x7f08019d
 int id showHome 0x7f08019e
 int id showTitle 0x7f08019f
-int id sign_up_button 0x7f0801a0
+int id signUpButton 0x7f08020d
 int id signupRedirectText 0x7f0801a1
+int id signupText 0x7f08020b
 int id sin 0x7f0801a2
 int id skipCollapsed 0x7f0801a3
 int id skipped 0x7f0801a4
@@ -3901,6 +3905,8 @@ int string common_open_on_phone 0x7f100039
 int string common_signin_button_text 0x7f10003a
 int string common_signin_button_text_long 0x7f10003b
 int string copy_toast_msg 0x7f10003c
+int string e_mail 0x7f1000c6
+int string email 0x7f1000c7
 int string email_hint 0x7f10003d
 int string error_a11y_label 0x7f10003e
 int string error_icon_content_description 0x7f10003f
@@ -4021,7 +4027,9 @@ int string mtrl_switch_track_path 0x7f1000b1
 int string mtrl_timepicker_cancel 0x7f1000b2
 int string mtrl_timepicker_confirm 0x7f1000b3
 int string password_confirm_hint 0x7f1000b4
+int string password_edittext 0x7f1000c8
 int string password_hint 0x7f1000b5
+int string password_text 0x7f1000c9
 int string password_toggle_content_description 0x7f1000b6
 int string path_password_eye 0x7f1000b7
 int string path_password_eye_mask_strike_through 0x7f1000b8
@@ -4035,6 +4043,7 @@ int string searchview_navigation_content_description 0x7f1000bf
 int string side_sheet_accessibility_pane_title 0x7f1000c0
 int string side_sheet_behavior 0x7f1000c1
 int string sign_up 0x7f1000c2
+int string sign_up_textview 0x7f1000ca
 int string signupRedirectText 0x7f1000c3
 int string status_bar_notification_info_overflow 0x7f1000c4
 int string username_hint 0x7f1000c5
