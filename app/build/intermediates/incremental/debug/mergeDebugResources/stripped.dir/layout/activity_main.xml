@@ -74,7 +74,7 @@
         android:layout_marginStart="112dp"
         android:layout_marginTop="360dp"
         android:enabled="false"
-        android:text="Connect to HC-06"
+        android:text="Connect to HC-05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -95,7 +95,7 @@
         android:layout_width="271dp"
         android:layout_height="48dp"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="3dp"

@@ -197,10 +197,10 @@ public class MainActivity extends AppCompatActivity {
                             String deviceHardwareAddress = device.getAddress();
                             Log.d(TAG, "deviceName:" + deviceName);
                             Log.d(TAG, "deviceHardwareAddress:" + deviceHardwareAddress);
-
                             btDevicesString=btDevicesString+deviceName+" || "+deviceHardwareAddress+"\n";
-                            if (deviceName.equals("HC-06")) {
-                                Log.d(TAG, "HC-06 found");
+
+                            if (deviceName.equals("HC-05 ")) {
+                                Log.d(TAG, "HC-05 found");
                                 arduinoUUID = device.getUuids()[0].getUuid();
                                 arduinoBTModule = device;
                                 connectToDevice.setEnabled(true);
