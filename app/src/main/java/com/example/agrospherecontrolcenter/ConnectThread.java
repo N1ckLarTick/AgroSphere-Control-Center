@@ -35,7 +35,7 @@ public class ConnectThread extends Thread {
         try {
             mmSocket.connect();
         } catch (IOException connectException) {
-            handler.obtainMessage(ERROR_READ, "Unable to connect to the BT device").sendToTarget();
+            handler.obtainMessage(ERROR_READ, "Ошибка подключения").sendToTarget();
             Log.e(TAG, "connectException: " + connectException);
             try {
                 mmSocket.close();

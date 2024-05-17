@@ -143,14 +143,12 @@ public class MainActivity extends AppCompatActivity {
         connectToDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btReadings.setText("");
                 if (arduinoBTModule != null) {
 
                     connectToBTObservable.
                             observeOn(AndroidSchedulers.mainThread()).
                             subscribeOn(Schedulers.io()).
                             subscribe(valueRead -> {
-
                                 btReadings.setText(valueRead);
 
                             });
@@ -164,11 +162,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (bluetoothAdapter == null) {
-                    Toast.makeText(MainActivity.this, "Device doesn't support Bluetooth", Toast.LENGTH_SHORT).show();
-                    //Log.d(TAG, "Device doesn't support Bluetooth");
+                    Log.d(TAG, "Device doesn't support Bluetooth");
                 } else {
-                    Toast.makeText(MainActivity.this, "Device support Bluetooth", Toast.LENGTH_SHORT).show();
-                    //Log.d(TAG, "Device support Bluetooth");
+                    Log.d(TAG, "Device support Bluetooth");
 
                     if (!bluetoothAdapter.isEnabled()) {
                         Log.d(TAG, "Bluetooth is disabled");
@@ -184,11 +180,9 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     } else {
-                        Toast.makeText(MainActivity.this, "Bluetooth is enabled", Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "Bluetooth is enabled");
                     }
                     String btDevicesString="";
-                    //Set <BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
                     Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
                     if (pairedDevices.size() > 0) {
 
@@ -201,11 +195,11 @@ public class MainActivity extends AppCompatActivity {
 
                             if (deviceName.equals("HC-05 ")) {
                                 Log.d(TAG, "HC-05 found");
+                                btDevices.setText("Датчик успешно найден");
                                 arduinoUUID = device.getUuids()[0].getUuid();
                                 arduinoBTModule = device;
                                 connectToDevice.setEnabled(true);
                             }
-                            btDevices.setText(btDevicesString);
                         }
                     }
                 }

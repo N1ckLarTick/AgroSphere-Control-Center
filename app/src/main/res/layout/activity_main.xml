@@ -7,19 +7,6 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/btDevicesText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Linked Bluetooth devices:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
-
-
-    <TextView
         android:id="@+id/btDevices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,18 +19,6 @@
         app:layout_constraintVertical_bias="0.24" />
 
     <TextView
-        android:id="@+id/btReadingsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Humidity + Temperature:"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602" />
-
-    <TextView
         android:id="@+id/btReadings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,18 +27,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725" />
+        app:layout_constraintVertical_bias="0.632" />
 
     <Button
         android:id="@+id/seachDevices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="52dp"
-        android:text="Search linked BT devices"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="108dp"
+        android:text="Найти датчик HC-05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -72,10 +47,10 @@
         android:id="@+id/connectToDevice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
+        android:layout_marginStart="112dp"
         android:layout_marginTop="356dp"
         android:enabled="false"
-        android:text="Connect to HC-05"
+        android:text="Вывести показания"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -100,15 +75,15 @@
         android:textSize="18sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="679dp" />
+        tools:layout_editor_absoluteY="666dp" />
 
     <Button
         android:id="@+id/logoutbutton"
         android:layout_width="140dp"
         android:layout_height="49dp"
         android:text="Logout"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="666dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
