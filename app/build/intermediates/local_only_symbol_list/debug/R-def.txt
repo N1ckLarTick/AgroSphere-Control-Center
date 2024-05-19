@@ -8,9 +8,7 @@ drawable button_background
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id btDevices
-id btDevicesText
 id btReadings
-id btReadingsText
 id connectToDevice
 id emailText
 id loginRedirectText
@@ -43,6 +41,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string login
 string loginRedirectText
+string logout
 string password_confirm_hint
 string password_edittext
 string password_hint

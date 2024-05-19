@@ -14,5 +14,6 @@
     <string name="password_text">Пароль</string>
     <string name="password_edittext">Введите пароль</string>
     <string name="sign_up_textview">Sign up</string>
+    <string name="logout">Logout</string>
 
 </resources>

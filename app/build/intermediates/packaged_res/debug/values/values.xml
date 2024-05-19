@@ -13,6 +13,7 @@
     <string name="google_storage_bucket" translatable="false">agrosphere-control-center.appspot.com</string>
     <string name="login">Login</string>
     <string name="loginRedirectText">Already an user?</string>
+    <string name="logout">Logout</string>
     <string name="password_confirm_hint">Confirm Password</string>
     <string name="password_edittext">Введите пароль</string>
     <string name="password_hint">Password</string>
