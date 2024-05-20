@@ -31,7 +31,20 @@ public final class ActivityRegistrationBinding implements ViewBinding {
   @NonNull
   public final TextView loginTextR;
 
-  @NonNull
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   */
+  @Nullable
   public final ImageView logo;
 
   @NonNull
@@ -48,7 +61,7 @@ public final class ActivityRegistrationBinding implements ViewBinding {
 
   private ActivityRegistrationBinding(@NonNull LinearLayout rootView,
       @NonNull TextView loginRedirectText, @NonNull TextView loginText,
-      @NonNull TextView loginTextR, @NonNull ImageView logo, @NonNull EditText password,
+      @NonNull TextView loginTextR, @Nullable ImageView logo, @NonNull EditText password,
       @NonNull TextView passwordText, @NonNull Button signUpButton, @NonNull EditText username) {
     this.rootView = rootView;
     this.loginRedirectText = loginRedirectText;
@@ -108,9 +121,6 @@ public final class ActivityRegistrationBinding implements ViewBinding {
 
       id = R.id.logo;
       ImageView logo = ViewBindings.findChildViewById(rootView, id);
-      if (logo == null) {
-        break missingId;
-      }
 
       id = R.id.password;
       EditText password = ViewBindings.findChildViewById(rootView, id);

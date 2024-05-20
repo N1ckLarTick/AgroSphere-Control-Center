@@ -28,7 +28,20 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final TextView loginText;
 
-  @NonNull
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   */
+  @Nullable
   public final ImageView logo;
 
   @NonNull
@@ -47,7 +60,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final EditText username;
 
   private ActivityLoginBinding(@NonNull LinearLayout rootView, @NonNull Button loginButton,
-      @NonNull TextView loginText, @NonNull ImageView logo, @NonNull EditText password,
+      @NonNull TextView loginText, @Nullable ImageView logo, @NonNull EditText password,
       @NonNull TextView passwordText, @NonNull TextView signupRedirectText,
       @NonNull TextView signupText, @NonNull EditText username) {
     this.rootView = rootView;
@@ -102,9 +115,6 @@ public final class ActivityLoginBinding implements ViewBinding {
 
       id = R.id.logo;
       ImageView logo = ViewBindings.findChildViewById(rootView, id);
-      if (logo == null) {
-        break missingId;
-      }
 
       id = R.id.password;
       EditText password = ViewBindings.findChildViewById(rootView, id);
