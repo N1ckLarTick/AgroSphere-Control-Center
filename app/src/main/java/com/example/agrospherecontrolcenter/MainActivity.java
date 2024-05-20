@@ -4,6 +4,7 @@ import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -15,7 +16,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +25,8 @@ import com.example.agrospherecontrolcenter.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
 
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public static Handler handler;
     private final static int ERROR_READ = 0;
     BluetoothDevice arduinoBTModule = null;
+    private BluetoothSocket mBTSocket;
     UUID arduinoUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -89,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         TextView btReadings = findViewById(R.id.btReadings);
         TextView btDevices = findViewById(R.id.btDevices);
         Button connectToDevice = (Button) findViewById(R.id.connectToDevice);
-        Button seachDevices = (Button) findViewById(R.id.seachDevices);
+        Button searchDevices = (Button) findViewById(R.id.searchDevices);
         Button clearValues = (Button) findViewById(R.id.refresh);
         Log.d(TAG, "Begin Execution");
         checkPermissions();
@@ -112,13 +115,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 btDevices.setText("");
                 btReadings.setText("");
+                connectToDevice.setEnabled(false);
             }
         });
 
         final Observable<String> connectToBTObservable = Observable.create(emitter -> {
             Log.d(TAG, "Calling connectThread class");
             ConnectThread connectThread = new ConnectThread(arduinoBTModule, arduinoUUID, handler);
-            connectThread.run();
+            connectThread.run(arduinoBTModule);
 
             if (connectThread.getMmSocket().isConnected()) {
                 Log.d(TAG, "Calling ConnectedThread class");
@@ -156,8 +160,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        seachDevices.setOnClickListener(new View.OnClickListener() {
+        binding.btOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                String s = "1";
+                Log.d(TAG, "Calling ConnectedThread class");
+                //ConnectedThread connectedThread;
+               // connectedThread = MyApplication.getApplication().getCurrentConnectedThread();
+                try {
+                    mBTSocket.getOutputStream().write(s.getBytes());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+        searchDevices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -193,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.d(TAG, "deviceHardwareAddress:" + deviceHardwareAddress);
                             btDevicesString=btDevicesString+deviceName+" || "+deviceHardwareAddress+"\n";
 
-                            if (deviceName.equals("HC-05 ")) {
+                            if (deviceName.equals("HC-05") || deviceName.equals("HC-05 ")) {
                                 Log.d(TAG, "HC-05 found");
                                 btDevices.setText("Датчик успешно найден");
                                 arduinoUUID = device.getUuids()[0].getUuid();
@@ -201,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
                                 connectToDevice.setEnabled(true);
                             }
                         }
+                        btDevices.setText(btDevicesString);
                     }
                 }
                 Log.d(TAG, "Button Pressed");

@@ -37,7 +37,7 @@
                 <Button
                     android:layout_margin="2dp"
                     android:text="Find"
-                    android:id="@+id/seachDevices"
+                    android:id="@+id/searchDevices"
                     android:layout_width="match_parent"
                     android:layout_height="50sp" />
 

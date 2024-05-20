@@ -1,6 +1,7 @@
 package com.example.agrospherecontrolcenter;
 
 import android.annotation.SuppressLint;
+import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.os.Handler;
@@ -11,7 +12,7 @@ import java.util.UUID;
 
 
 public class ConnectThread extends Thread {
-    private final BluetoothSocket mmSocket;
+    private BluetoothSocket mmSocket;
     private static final String TAG = "FrugalLogs";
     public static Handler handler;
     private final static int ERROR_READ = 0;
@@ -30,17 +31,28 @@ public class ConnectThread extends Thread {
     }
 
     @SuppressLint("MissingPermission")
-    public void run() {
+    public void run(BluetoothDevice device) {
 
         try {
             mmSocket.connect();
         } catch (IOException connectException) {
-            handler.obtainMessage(ERROR_READ, "Ошибка подключения").sendToTarget();
+            //handler.obtainMessage(ERROR_READ, "Ошибка подключения").sendToTarget();
             Log.e(TAG, "connectException: " + connectException);
             try {
-                mmSocket.close();
-            } catch (IOException closeException) {
-                Log.e(TAG, "Could not close the client socket", closeException);
+                Log.e(TAG,"trying fallback...");
+
+                mmSocket =(BluetoothSocket) device.getClass().getMethod("createRfcommSocket", new Class[] {int.class}).invoke(device,1);
+                mmSocket.connect();
+
+                Log.e(TAG,"Connected");
+            }
+            catch (Exception e2) {
+                Log.e(TAG, "Couldn't establish Bluetooth connection!");
+                try {
+                    mmSocket.close();
+                } catch (IOException closeException) {
+                    Log.e(TAG, "Could not close the client socket", closeException);
+                }
             }
             return;
         }

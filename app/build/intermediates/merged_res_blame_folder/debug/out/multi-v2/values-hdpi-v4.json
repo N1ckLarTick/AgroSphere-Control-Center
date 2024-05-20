@@ -4,7 +4,7 @@
             "outputFile": "com.example.agrospherecontrolcenter.app-mergeDebugResources-37:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mikez\\.gradle\\caches\\transforms-3\\ca1cbd52dbb6345905bb974f00c90332\\transformed\\appcompat-1.6.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "source": "C:\\Users\\nickl\\.gradle\\caches\\transforms-3\\ca1cbd52dbb6345905bb974f00c90332\\transformed\\appcompat-1.6.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

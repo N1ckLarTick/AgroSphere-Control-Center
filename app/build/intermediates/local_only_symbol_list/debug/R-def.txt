@@ -8,6 +8,8 @@ drawable button_background
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id btDevices
+id btOff
+id btOn
 id btReadings
 id connectToDevice
 id emailText
@@ -20,7 +22,7 @@ id logoutbutton
 id password
 id passwordText
 id refresh
-id seachDevices
+id searchDevices
 id signUpButton
 id signupRedirectText
 id signupText

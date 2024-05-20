@@ -4,7 +4,7 @@
             "outputFile": "com.example.agrospherecontrolcenter.app-mergeDebugResources-37:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mikez\\.gradle\\caches\\transforms-3\\31123f7de03c406577ba945b2dabbf23\\transformed\\material-1.11.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "source": "C:\\Users\\nickl\\.gradle\\caches\\transforms-3\\31123f7de03c406577ba945b2dabbf23\\transformed\\material-1.11.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

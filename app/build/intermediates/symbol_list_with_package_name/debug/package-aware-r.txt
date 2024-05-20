@@ -3225,6 +3225,8 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btDevices
+id btOff
+id btOn
 id btReadings
 id buttonPanel
 id cache_measures
@@ -3516,7 +3518,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
-id seachDevices
+id searchDevices
 id search_badge
 id search_bar
 id search_button

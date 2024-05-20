@@ -1,18 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-38:\\layout\\activity_login.xml",
-        "source": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-41:\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-38:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-41:\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-38:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-41:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-38:\\layout\\activity_registration.xml",
+        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-41:\\layout\\activity_registration.xml"
     },
     {
         "merged": "com.example.agrospherecontrolcenter.app-mergeDebugResources-38:/layout/activity_registration.xml",
         "source": "com.example.agrospherecontrolcenter.app-main-41:/layout/activity_registration.xml"
     },
     {
-        "merged": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-38:\\layout\\activity_registration.xml",
-        "source": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-41:\\layout\\activity_registration.xml"
+        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-38:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-41:\\layout\\activity_main.xml"
     }
 ]
