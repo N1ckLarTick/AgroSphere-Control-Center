@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.example.agrospherecontrolcenter.app-mergeDebugResources-38:/layout-land/activity_main.xml",
+        "source": "com.example.agrospherecontrolcenter.app-main-41:/layout-land/activity_main.xml"
+    },
+    {
+        "merged": "com.example.agrospherecontrolcenter.app-mergeDebugResources-38:/layout-land/activity_registration.xml",
+        "source": "com.example.agrospherecontrolcenter.app-main-41:/layout-land/activity_registration.xml"
+    },
+    {
+        "merged": "com.example.agrospherecontrolcenter.app-mergeDebugResources-38:/layout-land/activity_login.xml",
+        "source": "com.example.agrospherecontrolcenter.app-main-41:/layout-land/activity_login.xml"
+    }
+]
