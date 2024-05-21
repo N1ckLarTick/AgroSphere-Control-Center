@@ -67,8 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:text="Connect"
-                android:enabled="false"/>
+                android:text="Connect" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

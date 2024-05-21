@@ -143,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
             emitter.onComplete();
 
         });
-
         connectToDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -160,17 +159,74 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        final Observable<String> sendDataToBTObservableOn = Observable.create(emitter -> {
+            Log.d(TAG, "Calling connectThread class");
+            ConnectThread connectThread = new ConnectThread(arduinoBTModule, arduinoUUID, handler);
+            connectThread.run(arduinoBTModule);
+
+            if (connectThread.getMmSocket().isConnected()) {
+                Log.d(TAG, "Calling ConnectedThread class");
+
+                ConnectedThread connectedThread = new ConnectedThread(connectThread.getMmSocket());
+                connectedThread.run();
+
+                String dataToSend = "1";
+                connectedThread.write(dataToSend);
+
+                connectedThread.cancel();
+            }
+
+            connectThread.cancel();
+
+            emitter.onComplete();
+
+        });
+        final Observable<String> sendDataToBTObservableOff = Observable.create(emitter -> {
+            Log.d(TAG, "Calling connectThread class");
+            ConnectThread connectThread = new ConnectThread(arduinoBTModule, arduinoUUID, handler);
+            connectThread.run(arduinoBTModule);
+
+            if (connectThread.getMmSocket().isConnected()) {
+                Log.d(TAG, "Calling ConnectedThread class");
+
+                ConnectedThread connectedThread = new ConnectedThread(connectThread.getMmSocket());
+                connectedThread.run();
+
+                String dataToSend = "0";
+                connectedThread.write(dataToSend);
+
+                connectedThread.cancel();
+            }
+
+            connectThread.cancel();
+
+            emitter.onComplete();
+
+        });
+
         binding.btOn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                String s = "1";
-                Log.d(TAG, "Calling ConnectedThread class");
-                //ConnectedThread connectedThread;
-               // connectedThread = MyApplication.getApplication().getCurrentConnectedThread();
-                try {
-                    mBTSocket.getOutputStream().write(s.getBytes());
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+            public void onClick(View view) {
+                if (arduinoBTModule != null) {
+
+                    sendDataToBTObservableOn.
+                            observeOn(AndroidSchedulers.mainThread()).
+                            subscribeOn(Schedulers.io()).
+                            subscribe();
+
+                }
+            }
+        });
+        binding.btOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (arduinoBTModule != null) {
+
+                    sendDataToBTObservableOff.
+                            observeOn(AndroidSchedulers.mainThread()).
+                            subscribeOn(Schedulers.io()).
+                            subscribe();
+
                 }
             }
         });
