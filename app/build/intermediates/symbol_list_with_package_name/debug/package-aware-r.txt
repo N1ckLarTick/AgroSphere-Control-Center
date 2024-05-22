@@ -2993,6 +2993,7 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
+drawable baseline_logout_24
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3034,6 +3035,7 @@ drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_logo_background
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -3045,6 +3047,7 @@ drawable ic_other_sign_in
 drawable ic_passkey
 drawable ic_password
 drawable ic_search_black_24
+drawable logo
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3232,6 +3235,11 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
+id cardView
+id cardView2
+id cardView3
+id cardView4
+id cardView5
 id carryVelocity
 id center
 id centerCrop
@@ -3352,6 +3360,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id indeterminate
@@ -3371,6 +3380,10 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
+id linearLayout2
+id linearLayout3
+id linearLayout4
 id listMode
 id list_item
 id loginRedirectText
@@ -3594,6 +3607,10 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView2
+id textView3
+id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3843,6 +3860,12 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap ic_logo
+mipmap ic_logo_background
+mipmap ic_logo_background_foreground
+mipmap ic_logo_background_round
+mipmap ic_logo_foreground
+mipmap ic_logo_round
 plurals mtrl_badge_content_description
 raw firebase_common_keep
 string abc_action_bar_home_description

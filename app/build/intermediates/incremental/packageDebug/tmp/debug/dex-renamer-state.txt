@@ -1,4 +1,4 @@
-#Tue May 21 16:40:03 NOVT 2024
+#Wed May 22 23:39:24 NOVT 2024
 base.0=C\:\\Users\\nickl\\AndroidStudioProjects\\AgroSphere-Control-Center\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\nickl\\AndroidStudioProjects\\AgroSphere-Control-Center\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\nickl\\AndroidStudioProjects\\AgroSphere-Control-Center\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex

@@ -7,10 +7,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.agrospherecontrolcenter.R;
@@ -20,7 +21,39 @@ import java.lang.String;
 
 public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   */
+  @Nullable
+  public final CardView cardView;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final CardView cardView2;
 
   @NonNull
   public final Button loginButton;
@@ -59,11 +92,14 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final EditText username;
 
-  private ActivityLoginBinding(@NonNull LinearLayout rootView, @NonNull Button loginButton,
-      @NonNull TextView loginText, @Nullable ImageView logo, @NonNull EditText password,
-      @NonNull TextView passwordText, @NonNull TextView signupRedirectText,
-      @NonNull TextView signupText, @NonNull EditText username) {
+  private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @Nullable CardView cardView,
+      @Nullable CardView cardView2, @NonNull Button loginButton, @NonNull TextView loginText,
+      @Nullable ImageView logo, @NonNull EditText password, @NonNull TextView passwordText,
+      @NonNull TextView signupRedirectText, @NonNull TextView signupText,
+      @NonNull EditText username) {
     this.rootView = rootView;
+    this.cardView = cardView;
+    this.cardView2 = cardView2;
     this.loginButton = loginButton;
     this.loginText = loginText;
     this.logo = logo;
@@ -76,7 +112,7 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -101,6 +137,12 @@ public final class ActivityLoginBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cardView;
+      CardView cardView = ViewBindings.findChildViewById(rootView, id);
+
+      id = R.id.cardView2;
+      CardView cardView2 = ViewBindings.findChildViewById(rootView, id);
+
       id = R.id.login_button;
       Button loginButton = ViewBindings.findChildViewById(rootView, id);
       if (loginButton == null) {
@@ -146,8 +188,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((LinearLayout) rootView, loginButton, loginText, logo,
-          password, passwordText, signupRedirectText, signupText, username);
+      return new ActivityLoginBinding((ConstraintLayout) rootView, cardView, cardView2, loginButton,
+          loginText, logo, password, passwordText, signupRedirectText, signupText, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

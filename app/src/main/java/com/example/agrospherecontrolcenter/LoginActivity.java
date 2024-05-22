@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.agrospherecontrolcenter.databinding.ActivityLoginBinding;
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
             String password = binding.password.getText().toString();
             if (login.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Введите данные", Toast.LENGTH_SHORT).show();
+                return;
             }
 
             mAuth.signInWithEmailAndPassword(login, password)
