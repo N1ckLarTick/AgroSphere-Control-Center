@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         clearValues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //btDevices.setText("");
+                btDevices.setText("");
                 btReadings.setText("");
                 connectToDevice.setEnabled(false);
             }
@@ -269,13 +269,13 @@ public class MainActivity extends AppCompatActivity {
 
                             if (deviceName.equals("HC-05") || deviceName.equals("HC-05 ")) {
                                 Log.d(TAG, "HC-05 found");
-                                //btDevices.setText("Датчик успешно найден");
+                                btDevices.setText("Датчик успешно найден");
                                 arduinoUUID = device.getUuids()[0].getUuid();
                                 arduinoBTModule = device;
                                 connectToDevice.setEnabled(true);
                             }
                         }
-                        //btDevices.setText(btDevicesString);
+                        btDevices.setText(btDevicesString);
                     }
                 }
                 Log.d(TAG, "Button Pressed");
