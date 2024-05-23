@@ -164,10 +164,6 @@
         "source": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-41:\\mipmap-xxhdpi\\ic_logo_foreground.webp"
     },
     {
-        "merged": "com.example.agrospherecontrolcenter.app-merged_res-39:/layout_activity_main.xml.flat",
-        "source": "com.example.agrospherecontrolcenter.app-main-41:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-39:\\mipmap-xxxhdpi_ic_logo_round.webp.flat",
         "source": "C:\\Users\\Mikez\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-41:\\mipmap-xxxhdpi\\ic_logo_round.webp"
     },
