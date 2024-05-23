@@ -1,0 +1,3 @@
+com.example.agrospherecontrolcenter.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

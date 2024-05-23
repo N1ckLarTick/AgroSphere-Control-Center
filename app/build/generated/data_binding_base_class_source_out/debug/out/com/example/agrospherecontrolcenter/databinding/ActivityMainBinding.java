@@ -22,20 +22,7 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   private final View rootView;
 
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   */
-  @Nullable
+  @NonNull
   public final TextView btDevices;
 
   @NonNull
@@ -206,7 +193,7 @@ public final class ActivityMainBinding implements ViewBinding {
   @Nullable
   public final TextView textView4;
 
-  private ActivityMainBinding(@NonNull View rootView, @Nullable TextView btDevices,
+  private ActivityMainBinding(@NonNull View rootView, @NonNull TextView btDevices,
       @NonNull Button btOff, @NonNull Button btOn, @NonNull TextView btReadings,
       @Nullable CardView cardView5, @NonNull Button connectToDevice, @NonNull TextView emailText,
       @Nullable ConstraintLayout linearLayout, @Nullable LinearLayout linearLayout2,
@@ -264,6 +251,9 @@ public final class ActivityMainBinding implements ViewBinding {
     missingId: {
       id = R.id.btDevices;
       TextView btDevices = ViewBindings.findChildViewById(rootView, id);
+      if (btDevices == null) {
+        break missingId;
+      }
 
       id = R.id.btOff;
       Button btOff = ViewBindings.findChildViewById(rootView, id);

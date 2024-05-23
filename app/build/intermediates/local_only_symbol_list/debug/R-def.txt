@@ -2,13 +2,13 @@ R_DEF: Internal format may change without notice
 local
 animator button_animator
 color black
+color ic_launcher_background
 color white
 drawable background
 drawable baseline_logout_24
 drawable button_background
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable ic_logo_background
 drawable logo
 id btDevices
 id btOff
@@ -48,11 +48,9 @@ layout activity_login
 layout activity_main
 layout activity_registration
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 mipmap ic_logo
-mipmap ic_logo_background
-mipmap ic_logo_background_foreground
-mipmap ic_logo_background_round
 mipmap ic_logo_foreground
 mipmap ic_logo_round
 string app_name
