@@ -44,6 +44,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.AgroSphereControlCenter" >
         <activity
+            android:name="com.example.agrospherecontrolcenter.DeviceManagement"
+            android:exported="false" />
+        <activity
+            android:name="com.example.agrospherecontrolcenter.AddNewDeviceActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.agrospherecontrolcenter.RegistrationActivity"
             android:exported="true" >
             <intent-filter>
@@ -107,6 +113,10 @@
                 android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

@@ -3231,6 +3231,9 @@ id btDevices
 id btOff
 id btOn
 id btReadings
+id btnAdd
+id btnBack
+id btnSaveDevice
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3239,7 +3242,6 @@ id cardView
 id cardView2
 id cardView3
 id cardView4
-id cardView5
 id carryVelocity
 id center
 id centerCrop
@@ -3289,6 +3291,9 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id device_name
+id device_pin
+id device_type
 id dialog_button
 id dimensions
 id direct
@@ -3311,7 +3316,11 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextName
+id editTextPin
+id editTextType
 id edit_query
+id edittextList
 id elastic
 id emailText
 id embed
@@ -3381,7 +3390,6 @@ id line1
 id line3
 id linear
 id linearLayout
-id linearLayout2
 id linearLayout3
 id linearLayout4
 id listMode
@@ -3512,6 +3520,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerView
 id refresh
 id report_drawn
 id reverseSawtooth
@@ -3607,7 +3616,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id textView2
 id textView3
 id textView4
@@ -3776,6 +3784,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_new_device
+layout activity_device_management
 layout activity_login
 layout activity_main
 layout activity_registration
@@ -3797,6 +3807,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout device_item
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3945,6 +3956,9 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string input_name
+string input_pin
+string input_type
 string item_view_role_description
 string login
 string loginRedirectText
@@ -4059,6 +4073,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string project_id
+string save
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description

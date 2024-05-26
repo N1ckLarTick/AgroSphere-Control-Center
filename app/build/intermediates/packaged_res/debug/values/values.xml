@@ -12,6 +12,9 @@
     <string name="google_app_id" translatable="false">1:432858721059:android:07607757cd3594d624fa96</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC5NRn5BAGSHqcWuwtj5M5C-OXFQ9CmcT8</string>
     <string name="google_storage_bucket" translatable="false">agrosphere-control-center.appspot.com</string>
+    <string name="input_name">Имя устройства</string>
+    <string name="input_pin">Пин устройства</string>
+    <string name="input_type">Тип устройства</string>
     <string name="login">Login</string>
     <string name="loginRedirectText">Already an user?</string>
     <string name="logout">Logout</string>
@@ -20,6 +23,7 @@
     <string name="password_hint">Password</string>
     <string name="password_text">Пароль</string>
     <string name="project_id" translatable="false">agrosphere-control-center</string>
+    <string name="save">Сохранить</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_up_textview">Sign up</string>
     <string name="signupRedirectText">Not yet registered?</string>

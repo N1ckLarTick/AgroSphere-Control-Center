@@ -16,4 +16,9 @@
     <string name="sign_up_textview">Sign up</string>
     <string name="logout">Logout</string>
 
+    <string name="input_name">Имя устройства</string>
+    <string name="input_type">Тип устройства</string>
+    <string name="input_pin">Пин устройства</string>
+    <string name="save">Сохранить</string>
+
 </resources>
