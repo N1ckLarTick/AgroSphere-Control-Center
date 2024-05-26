@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="ic_launcher_background">#3DDC84</color>
+    <color name="ic_plus_background">#3DDC84</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">AgroSphere Control Center</string>
     <string name="e_mail">E-Mail</string>

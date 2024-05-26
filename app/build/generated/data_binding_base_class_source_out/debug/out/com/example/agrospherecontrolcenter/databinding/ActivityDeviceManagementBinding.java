@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,16 +21,33 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView btReadings;
+
+  @NonNull
   public final Button btnBack;
 
   @NonNull
-  public final EditText editTextName;
+  public final Button btnConnect;
+
+  @NonNull
+  public final TextView deviceName;
+
+  @NonNull
+  public final TextView devicePin;
+
+  @NonNull
+  public final TextView deviceType;
 
   private ActivityDeviceManagementBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button btnBack, @NonNull EditText editTextName) {
+      @NonNull TextView btReadings, @NonNull Button btnBack, @NonNull Button btnConnect,
+      @NonNull TextView deviceName, @NonNull TextView devicePin, @NonNull TextView deviceType) {
     this.rootView = rootView;
+    this.btReadings = btReadings;
     this.btnBack = btnBack;
-    this.editTextName = editTextName;
+    this.btnConnect = btnConnect;
+    this.deviceName = deviceName;
+    this.devicePin = devicePin;
+    this.deviceType = deviceType;
   }
 
   @Override
@@ -60,20 +77,44 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btReadings;
+      TextView btReadings = ViewBindings.findChildViewById(rootView, id);
+      if (btReadings == null) {
+        break missingId;
+      }
+
       id = R.id.btnBack;
       Button btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
         break missingId;
       }
 
-      id = R.id.editTextName;
-      EditText editTextName = ViewBindings.findChildViewById(rootView, id);
-      if (editTextName == null) {
+      id = R.id.btnConnect;
+      Button btnConnect = ViewBindings.findChildViewById(rootView, id);
+      if (btnConnect == null) {
         break missingId;
       }
 
-      return new ActivityDeviceManagementBinding((ConstraintLayout) rootView, btnBack,
-          editTextName);
+      id = R.id.device_name;
+      TextView deviceName = ViewBindings.findChildViewById(rootView, id);
+      if (deviceName == null) {
+        break missingId;
+      }
+
+      id = R.id.device_pin;
+      TextView devicePin = ViewBindings.findChildViewById(rootView, id);
+      if (devicePin == null) {
+        break missingId;
+      }
+
+      id = R.id.device_type;
+      TextView deviceType = ViewBindings.findChildViewById(rootView, id);
+      if (deviceType == null) {
+        break missingId;
+      }
+
+      return new ActivityDeviceManagementBinding((ConstraintLayout) rootView, btReadings, btnBack,
+          btnConnect, deviceName, devicePin, deviceType);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

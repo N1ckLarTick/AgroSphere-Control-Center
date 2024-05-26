@@ -1437,6 +1437,7 @@ int color foreground_material_light 0x7f05006a
 int color highlighted_text_material_dark 0x7f05006b
 int color highlighted_text_material_light 0x7f05006c
 int color ic_launcher_background 0x7f05006d
+int color ic_plus_background 0x7f050312
 int color m3_appbar_overlay_color 0x7f05006e
 int color m3_assist_chip_icon_tint_color 0x7f05006f
 int color m3_assist_chip_stroke_color 0x7f050070
@@ -3232,6 +3233,7 @@ int id btOn 0x7f08006b
 int id btReadings 0x7f08006c
 int id btnAdd 0x7f08021c
 int id btnBack 0x7f080223
+int id btnConnect 0x7f080224
 int id btnSaveDevice 0x7f08021d
 int id buttonPanel 0x7f08006d
 int id cache_measures 0x7f08006e
@@ -3319,7 +3321,6 @@ int id editTextName 0x7f08021e
 int id editTextPin 0x7f08021f
 int id editTextType 0x7f080220
 int id edit_query 0x7f0800bf
-int id edittextList 0x7f080221
 int id elastic 0x7f0800c0
 int id emailText 0x7f0800c1
 int id embed 0x7f0800c2
@@ -3874,6 +3875,9 @@ int mipmap ic_launcher_round 0x7f0d0002
 int mipmap ic_logo 0x7f0d0003
 int mipmap ic_logo_foreground 0x7f0d0004
 int mipmap ic_logo_round 0x7f0d0005
+int mipmap ic_plus 0x7f0d0006
+int mipmap ic_plus_foreground 0x7f0d0007
+int mipmap ic_plus_round 0x7f0d0008
 int plurals mtrl_badge_content_description 0x7f0e0000
 int raw firebase_common_keep 0x7f0f0000
 int string abc_action_bar_home_description 0x7f100000

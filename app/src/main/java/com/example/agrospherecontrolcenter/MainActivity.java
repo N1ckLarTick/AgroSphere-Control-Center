@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "FrugalLogs";
     private static final int REQUEST_ENABLE_BT = 1;
     public static Handler handler;
-    public static Handler handler1;
     private final static int ERROR_READ = 0;
     BluetoothDevice arduinoBTModule = null;
     private BluetoothSocket mBTSocket;
@@ -109,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
         repository = DeviceDatabase.newInstance(getApplication());
         BluetoothManager bluetoothManager = getSystemService(BluetoothManager.class);
         BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
-        handler1 = new Handler(Looper.getMainLooper());
 
         arrayAdapter = new DeviceAdapter();
         repository.deviceDao().getDevices().observe(this, new Observer<List<Device>>() {
@@ -145,9 +143,9 @@ public class MainActivity extends AppCompatActivity {
                 Device device = arrayAdapter.getDevices().get(position);
                 //showAlert(device);
                 Intent intent = new Intent(getApplicationContext(), DeviceManagement.class);
+                intent.putExtra("device",device);
                 startActivity(intent);
                 finish();
-                Toast.makeText(MainActivity.this, device.getPin(), Toast.LENGTH_SHORT).show();
             }
         });
 

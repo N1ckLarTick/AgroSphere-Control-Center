@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -118,22 +117,6 @@ public final class ActivityMainBinding implements ViewBinding {
    */
   @Nullable
   public final Button connectToDevice;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   */
-  @Nullable
-  public final EditText edittextList;
 
   /**
    * This binding is not available in all configurations.
@@ -301,7 +284,7 @@ public final class ActivityMainBinding implements ViewBinding {
   private ActivityMainBinding(@NonNull View rootView, @Nullable TextView btDevices,
       @Nullable Button btOff, @Nullable Button btOn, @Nullable TextView btReadings,
       @Nullable FloatingActionButton btnAdd, @Nullable Button connectToDevice,
-      @Nullable EditText edittextList, @Nullable TextView emailText, @NonNull View linearLayout,
+      @Nullable TextView emailText, @NonNull View linearLayout,
       @Nullable LinearLayout linearLayout3, @Nullable LinearLayout linearLayout4,
       @Nullable Button logoutbutton, @Nullable RecyclerView recyclerView, @Nullable Button refresh,
       @Nullable Button searchDevices, @Nullable TextView textView2, @Nullable TextView textView3,
@@ -313,7 +296,6 @@ public final class ActivityMainBinding implements ViewBinding {
     this.btReadings = btReadings;
     this.btnAdd = btnAdd;
     this.connectToDevice = connectToDevice;
-    this.edittextList = edittextList;
     this.emailText = emailText;
     this.linearLayout = linearLayout;
     this.linearLayout3 = linearLayout3;
@@ -372,9 +354,6 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.connectToDevice;
       Button connectToDevice = ViewBindings.findChildViewById(rootView, id);
 
-      id = R.id.edittextList;
-      EditText edittextList = ViewBindings.findChildViewById(rootView, id);
-
       id = R.id.emailText;
       TextView emailText = ViewBindings.findChildViewById(rootView, id);
 
@@ -412,8 +391,8 @@ public final class ActivityMainBinding implements ViewBinding {
       TextView textView4 = ViewBindings.findChildViewById(rootView, id);
 
       return new ActivityMainBinding(rootView, btDevices, btOff, btOn, btReadings, btnAdd,
-          connectToDevice, edittextList, emailText, linearLayout, linearLayout3, linearLayout4,
-          logoutbutton, recyclerView, refresh, searchDevices, textView2, textView3, textView4);
+          connectToDevice, emailText, linearLayout, linearLayout3, linearLayout4, logoutbutton,
+          recyclerView, refresh, searchDevices, textView2, textView3, textView4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -3,6 +3,7 @@ local
 animator button_animator
 color black
 color ic_launcher_background
+color ic_plus_background
 color white
 drawable background
 drawable baseline_logout_24
@@ -16,6 +17,7 @@ id btOn
 id btReadings
 id btnAdd
 id btnBack
+id btnConnect
 id btnSaveDevice
 id cardView
 id cardView2
@@ -28,7 +30,6 @@ id device_type
 id editTextName
 id editTextPin
 id editTextType
-id edittextList
 id emailText
 id imageView
 id linearLayout
@@ -64,6 +65,9 @@ mipmap ic_launcher_round
 mipmap ic_logo
 mipmap ic_logo_foreground
 mipmap ic_logo_round
+mipmap ic_plus
+mipmap ic_plus_foreground
+mipmap ic_plus_round
 string app_name
 string e_mail
 string email

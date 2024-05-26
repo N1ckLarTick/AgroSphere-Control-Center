@@ -1438,6 +1438,7 @@ color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
+color ic_plus_background
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3233,6 +3234,7 @@ id btOn
 id btReadings
 id btnAdd
 id btnBack
+id btnConnect
 id btnSaveDevice
 id buttonPanel
 id cache_measures
@@ -3320,7 +3322,6 @@ id editTextName
 id editTextPin
 id editTextType
 id edit_query
-id edittextList
 id elastic
 id emailText
 id embed
@@ -3875,6 +3876,9 @@ mipmap ic_launcher_round
 mipmap ic_logo
 mipmap ic_logo_foreground
 mipmap ic_logo_round
+mipmap ic_plus
+mipmap ic_plus_foreground
+mipmap ic_plus_round
 plurals mtrl_badge_content_description
 raw firebase_common_keep
 string abc_action_bar_home_description
