@@ -28,8 +28,6 @@ public class ConnectedThread extends Thread {
         InputStream tmpIn = null;
         OutputStream tmpOut = null;
 
-        // Get the input and output streams; using temp objects because
-        // member streams are final.
         try {
             tmpIn = socket.getInputStream();
         } catch (IOException e) {
@@ -40,8 +38,6 @@ public class ConnectedThread extends Thread {
         } catch (IOException e) {
             Log.e(TAG, "Error occurred when creating output stream", e);
         }
-        //Input and Output streams members of the class
-        //We wont use the Output stream of this project
         mmInStream = tmpIn;
         mmOutStream = tmpOut;
     }

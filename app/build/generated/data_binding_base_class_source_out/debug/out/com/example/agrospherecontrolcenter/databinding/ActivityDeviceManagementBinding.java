@@ -27,6 +27,9 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
   public final Button btnBack;
 
   @NonNull
+  public final Button btnConn;
+
+  @NonNull
   public final Button btnConnect;
 
   @NonNull
@@ -39,11 +42,13 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
   public final TextView deviceType;
 
   private ActivityDeviceManagementBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView btReadings, @NonNull Button btnBack, @NonNull Button btnConnect,
-      @NonNull TextView deviceName, @NonNull TextView devicePin, @NonNull TextView deviceType) {
+      @NonNull TextView btReadings, @NonNull Button btnBack, @NonNull Button btnConn,
+      @NonNull Button btnConnect, @NonNull TextView deviceName, @NonNull TextView devicePin,
+      @NonNull TextView deviceType) {
     this.rootView = rootView;
     this.btReadings = btReadings;
     this.btnBack = btnBack;
+    this.btnConn = btnConn;
     this.btnConnect = btnConnect;
     this.deviceName = deviceName;
     this.devicePin = devicePin;
@@ -89,6 +94,12 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnConn;
+      Button btnConn = ViewBindings.findChildViewById(rootView, id);
+      if (btnConn == null) {
+        break missingId;
+      }
+
       id = R.id.btnConnect;
       Button btnConnect = ViewBindings.findChildViewById(rootView, id);
       if (btnConnect == null) {
@@ -114,7 +125,7 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
       }
 
       return new ActivityDeviceManagementBinding((ConstraintLayout) rootView, btReadings, btnBack,
-          btnConnect, deviceName, devicePin, deviceType);
+          btnConn, btnConnect, deviceName, devicePin, deviceType);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

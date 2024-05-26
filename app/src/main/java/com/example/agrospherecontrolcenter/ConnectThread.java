@@ -36,7 +36,7 @@ public class ConnectThread extends Thread {
         try {
             mmSocket.connect();
         } catch (IOException connectException) {
-            //handler.obtainMessage(ERROR_READ, "Ошибка подключения").sendToTarget();
+            handler.obtainMessage(ERROR_READ, "Ошибка подключения").sendToTarget();
             Log.e(TAG, "connectException: " + connectException);
             try {
                 Log.e(TAG,"trying fallback...");

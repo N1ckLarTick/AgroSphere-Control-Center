@@ -4,12 +4,12 @@
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-hdpi\\ic_plus_round.webp"
     },
     {
-        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xxxhdpi_ic_plus_foreground.webp.flat",
-        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xxxhdpi\\ic_plus_foreground.webp"
-    },
-    {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xxxhdpi_ic_logo_foreground.webp.flat",
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xxxhdpi\\ic_logo_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xxxhdpi_ic_plus_foreground.webp.flat",
+        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xxxhdpi\\ic_plus_foreground.webp"
     },
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
@@ -44,12 +44,12 @@
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xhdpi\\ic_logo.webp"
     },
     {
-        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xhdpi_ic_plus.webp.flat",
-        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xhdpi\\ic_plus.webp"
-    },
-    {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xhdpi_ic_plus.webp.flat",
+        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xhdpi\\ic_plus.webp"
     },
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-anydpi-v26_ic_launcher.xml.flat",

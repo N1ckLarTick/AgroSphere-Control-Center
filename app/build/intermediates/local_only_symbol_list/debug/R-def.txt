@@ -17,6 +17,7 @@ id btOn
 id btReadings
 id btnAdd
 id btnBack
+id btnConn
 id btnConnect
 id btnSaveDevice
 id cardView

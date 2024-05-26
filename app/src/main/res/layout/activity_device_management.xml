@@ -65,4 +65,11 @@
         android:text="Вывести"
 
         app:layout_constraintTop_toBottomOf="@id/btReadings" />
+    <Button
+        android:id="@+id/btnConn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отправить пакет данных"
+
+        app:layout_constraintTop_toBottomOf="@id/btnConnect" />
 </androidx.constraintlayout.widget.ConstraintLayout>
