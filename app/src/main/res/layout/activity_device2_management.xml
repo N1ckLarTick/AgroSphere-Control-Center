@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4CAF50"
-    tools:context=".DeviceManagement">
+    tools:context=".Device2Management">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
@@ -54,7 +54,7 @@
 
 
     <TextView
-        android:id="@+id/btReadings"
+        android:id="@+id/btReadings2"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:gravity="center"
@@ -67,25 +67,36 @@
 
     <Button
         android:layout_margin="15dp"
-        android:id="@+id/btnConnect"
+        android:id="@+id/btnON"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Вывести"
+        android:text="ON"
+        app:layout_constraintTop_toBottomOf="@+id/btReadings2"
+        tools:layout_editor_absoluteX="-14dp" />
+
+    <Button
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/btnOFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OFF"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btReadings" />
+        app:layout_constraintTop_toBottomOf="@+id/btnON" />
 
     <Button
-        android:layout_margin="15dp"
         android:id="@+id/btnConn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:text="Отправить пакет данных"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnConnect" />
+        app:layout_constraintTop_toBottomOf="@+id/btnOFF" />
 
     <Button
         android:id="@+id/btnBack"
@@ -97,4 +108,6 @@
         android:text="Назад"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,9 @@
         android:theme="@style/Theme.AgroSphereControlCenter"
         tools:targetApi="31">
         <activity
+            android:name=".Device2Management"
+            android:exported="false" />
+        <activity
             android:name=".DeviceManagement"
             android:exported="false" />
         <activity
