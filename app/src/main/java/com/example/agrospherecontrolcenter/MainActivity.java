@@ -201,7 +201,6 @@ public class MainActivity extends AppCompatActivity {
                 .setNegativeButton("Отмена", null)
                 .setIcon(android.R.drawable.ic_delete)
                 .show();
-        getOnBackPressedDispatcher(new V)
         repository.deviceDao().getDevices().observe(MainActivity.this, new Observer<List<Device>>() {
             @Override
             public void onChanged(List<Device> devices) {
