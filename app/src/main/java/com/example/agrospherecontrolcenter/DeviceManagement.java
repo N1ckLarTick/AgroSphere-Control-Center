@@ -139,7 +139,6 @@ public class DeviceManagement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (arduinoBTModule != null) {
-                    Toast.makeText(DeviceManagement.this, "Ошибка входа", Toast.LENGTH_SHORT).show();
                     sendDataToBTObservableOn.
                             observeOn(AndroidSchedulers.mainThread()).
                             subscribeOn(Schedulers.io()).

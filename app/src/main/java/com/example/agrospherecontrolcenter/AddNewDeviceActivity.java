@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.agrospherecontrolcenter.databinding.ActivityAddNewDeviceBinding;
 
@@ -42,16 +43,39 @@ public class AddNewDeviceActivity extends AppCompatActivity {
         id = getIntent().getStringExtra(EXTRA_ID);
 
         binding.editTextName.setText(name);
-        binding.editTextType.setText(type);
+        if(type.equals("Датчик")){
+            binding.radioButton.setChecked(true);
+        }
+        if(type.equals("Светодиод")){
+            binding.radioButton2.setChecked(true);
+        }
         binding.editTextPin.setText(pin);
 
         binding.btnSaveDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = binding.editTextName.getText().toString();
-                String type = binding.editTextType.getText().toString();
+                if(binding.editTextName.getText().toString().equals("")){
+                    Toast.makeText(AddNewDeviceActivity.this, "Введите название устройства", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String pin = binding.editTextPin.getText().toString();
-
+                if(binding.radioButton.isChecked() || binding.radioButton2.isChecked()){
+                    if(binding.radioButton.isChecked()){
+                        type = "Датчик";
+                    }
+                    else{
+                        type = "Светодиод";
+                    }
+                }
+                else{
+                    Toast.makeText(AddNewDeviceActivity.this, "Выберите тип устройства", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(binding.editTextPin.getText().toString().equals("")){
+                    Toast.makeText(AddNewDeviceActivity.this, "Введите пин устройства", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Device device = new Device(name,type,pin);
                 if (id.equals("0")) {
                     Log.d("LOG","Create Product"+id+" "+device);

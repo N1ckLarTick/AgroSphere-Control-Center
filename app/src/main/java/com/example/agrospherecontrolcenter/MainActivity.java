@@ -128,12 +128,13 @@ public class MainActivity extends AppCompatActivity {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int position = viewHolder.getAdapterPosition();
                 Device device = arrayAdapter.getDevices().get(position);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        repository.deviceDao().remove(device.getId());
-                    }
-                }).start();
+                showAlert(device);
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        repository.deviceDao().remove(device.getId());
+//                    }
+//                }).start();
             }
         });
         itemTouchHelper.attachToRecyclerView(binding.recyclerView);
@@ -141,184 +142,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDeviceClick(int position) {
                 Device device = arrayAdapter.getDevices().get(position);
-                //showAlert(device);
-                Intent intent = new Intent(getApplicationContext(), DeviceManagement.class);
-                intent.putExtra("device",device);
-                startActivity(intent);
-                finish();
+                Log.d(TAG, device.getType());
+                if (device.getType().equals("Датчик")) {
+                    Intent intent = new Intent(getApplicationContext(), DeviceManagement.class);
+                    intent.putExtra("device", device);
+                    startActivity(intent);
+                    finish();
+                }
+                if (device.getType().equals("Светодиод")) {
+                    Intent intent = new Intent(getApplicationContext(), Device2Management.class);
+                    intent.putExtra("device", device);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
         Log.d(TAG, "Begin Execution");
         checkPermissions();
         addListData();
-        handler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-
-                    case ERROR_READ:
-                        String arduinoMsg = msg.obj.toString();
-                        //btReadings.setText(arduinoMsg);
-                        break;
-                }
-            }
-        };
-
-        final Observable<String> connectToBTObservable = Observable.create(emitter -> {
-            Log.d(TAG, "Calling connectThread class");
-            ConnectThread connectThread = new ConnectThread(arduinoBTModule, arduinoUUID, handler);
-            connectThread.run(arduinoBTModule);
-
-            if (connectThread.getMmSocket().isConnected()) {
-                Log.d(TAG, "Calling ConnectedThread class");
-
-                ConnectedThread connectedThread = new ConnectedThread(connectThread.getMmSocket());
-                connectedThread.run();
-                if (connectedThread.getValueRead() != null) {
-
-                    emitter.onNext(connectedThread.getValueRead());
-                }
-
-                connectedThread.cancel();
-            }
-
-            connectThread.cancel();
-
-            emitter.onComplete();
-
-        });
-//        connectToDevice.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (arduinoBTModule != null) {
-//
-//                    connectToBTObservable.
-//                            observeOn(AndroidSchedulers.mainThread()).
-//                            subscribeOn(Schedulers.io()).
-//                            subscribe(valueRead -> {
-//                                btReadings.setText(valueRead);
-//
-//                            });
-//
-//                }
-//            }
-//        });
-        final Observable<String> sendDataToBTObservableOn = Observable.create(emitter -> {
-            Log.d(TAG, "Calling connectThread class");
-            ConnectThread connectThread = new ConnectThread(arduinoBTModule, arduinoUUID, handler);
-            connectThread.run(arduinoBTModule);
-
-            if (connectThread.getMmSocket().isConnected()) {
-                Log.d(TAG, "Calling ConnectedThread class");
-
-                ConnectedThread connectedThread = new ConnectedThread(connectThread.getMmSocket());
-                connectedThread.run();
-
-                String dataToSend = "1";
-                connectedThread.write(dataToSend);
-
-                connectedThread.cancel();
-            }
-
-            connectThread.cancel();
-
-            emitter.onComplete();
-
-        });
-
-//        binding.btOn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (arduinoBTModule != null) {
-//
-//                    sendDataToBTObservableOn.
-//                            observeOn(AndroidSchedulers.mainThread()).
-//                            subscribeOn(Schedulers.io()).
-//                            subscribe();
-//
-//                }
-//            }
-//        });
-//        binding.btOff.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (arduinoBTModule != null) {
-//
-//                    sendDataToBTObservableOff.
-//                            observeOn(AndroidSchedulers.mainThread()).
-//                            subscribeOn(Schedulers.io()).
-//                            subscribe();
-//
-//                }
-//            }
-//        });
-//        searchDevices.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                if (bluetoothAdapter == null) {
-//                    Log.d(TAG, "Device doesn't support Bluetooth");
-//                } else {
-//                    Log.d(TAG, "Device support Bluetooth");
-//
-//                    if (!bluetoothAdapter.isEnabled()) {
-//                        Log.d(TAG, "Bluetooth is disabled");
-//                        Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-//                        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//                            Log.d(TAG, "We don't BT Permissions");
-//                            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-//                            Log.d(TAG, "Bluetooth is enabled now");
-//                        } else {
-//                            Log.d(TAG, "We have BT Permissions");
-//                            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-//                            Log.d(TAG, "Bluetooth is enabled now");
-//                        }
-//
-//                    } else {
-//                        Log.d(TAG, "Bluetooth is enabled");
-//                    }
-//                    String btDevicesString="";
-//                    Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
-//                    if (pairedDevices.size() > 0) {
-//
-//                        for (BluetoothDevice device: pairedDevices) {
-//                            String deviceName = device.getName();
-//                            String deviceHardwareAddress = device.getAddress();
-//                            Log.d(TAG, "deviceName:" + deviceName);
-//                            Log.d(TAG, "deviceHardwareAddress:" + deviceHardwareAddress);
-//                            btDevicesString=btDevicesString+deviceName+" || "+deviceHardwareAddress+"\n";
-//
-//                            if (deviceName.equals("HC-05") || deviceName.equals("HC-05 ")) {
-//                                Log.d(TAG, "HC-05 found");
-//                                btDevices.setText("Датчик успешно найден");
-//                                arduinoUUID = device.getUuids()[0].getUuid();
-//                                arduinoBTModule = device;
-//                                connectToDevice.setEnabled(true);
-//                            }
-//                        }
-//                        btDevices.setText(btDevicesString);
-//                    }
-//                }
-//                Log.d(TAG, "Button Pressed");
-//            }
-//        });
-
-//        user = FirebaseAuth.getInstance().getCurrentUser();
-//        if(user==null){
-//            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
-//        else{
-//            binding.emailText.setText(user.getEmail());
-//        }
-//        binding.logoutbutton.setOnClickListener(view->{
-//            FirebaseAuth.getInstance().signOut();
-//            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//            startActivity(intent);
-//            finish();
-//        });
     }
     private void addListData(){
         binding.btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -356,8 +198,15 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 })
-                .setNegativeButton("Отмена",null)
+                .setNegativeButton("Отмена", null)
                 .setIcon(android.R.drawable.ic_delete)
                 .show();
+        getOnBackPressedDispatcher(new V)
+        repository.deviceDao().getDevices().observe(MainActivity.this, new Observer<List<Device>>() {
+            @Override
+            public void onChanged(List<Device> devices) {
+                arrayAdapter.setDevices(devices);
+            }
+        });
     }
 }

@@ -61,34 +61,11 @@ public class Device2Management extends AppCompatActivity {
 
                     case ERROR_READ:
                         String arduinoMsg = msg.obj.toString();
-                        binding.btReadings.setText(arduinoMsg);
+                        binding.btReadings2.setText(arduinoMsg);
                         break;
                 }
             }
         };
-        final Observable<String> connectToBTObservable = Observable.create(emitter -> {
-            Log.d(TAG, "Calling connectThread class");
-            ConnectThread connectThread = new ConnectThread(arduinoBTModule, arduinoUUID, handler);
-            connectThread.run(arduinoBTModule);
-
-            if (connectThread.getMmSocket().isConnected()) {
-                Log.d(TAG, "Calling ConnectedThread class");
-
-                ConnectedThread connectedThread = new ConnectedThread(connectThread.getMmSocket());
-                connectedThread.run();
-                if (connectedThread.getValueRead() != null) {
-
-                    emitter.onNext(connectedThread.getValueRead());
-                }
-
-                connectedThread.cancel();
-            }
-
-            connectThread.cancel();
-
-            emitter.onComplete();
-
-        });
         final Observable<String> sendDataToBTObservableOn = Observable.create(emitter -> {
             Log.d(TAG, "Calling connectThread class");
             ConnectThread connectThread = new ConnectThread(arduinoBTModule, arduinoUUID, handler);
@@ -137,25 +114,12 @@ public class Device2Management extends AppCompatActivity {
                 }
             }
         }
-        binding.btnConn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (arduinoBTModule != null) {
-                    Toast.makeText(Device2Management.this, "Ошибка входа", Toast.LENGTH_SHORT).show();
-                    sendDataToBTObservableOn.
-                            observeOn(AndroidSchedulers.mainThread()).
-                            subscribeOn(Schedulers.io()).
-                            subscribe();
-                }
-            }
-        });
-
         binding.btnON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (arduinoBTModule != null) {
                     Log.d(TAG, "Button Pressed");
-                    dataToSend = "";
+                    dataToSend = "WRITE_PIN:"+device.getPin()+":HIGH";
                     sendDataToBTObservableOn.
                             observeOn(AndroidSchedulers.mainThread()).
                             subscribeOn(Schedulers.io()).
@@ -169,7 +133,7 @@ public class Device2Management extends AppCompatActivity {
             public void onClick(View view) {
                 if (arduinoBTModule != null) {
                     Log.d(TAG, "Button Pressed");
-                    dataToSend = "";
+                    dataToSend = "WRITE_PIN:"+device.getPin()+":LOW";
                     sendDataToBTObservableOn.
                             observeOn(AndroidSchedulers.mainThread()).
                             subscribeOn(Schedulers.io()).
@@ -178,7 +142,7 @@ public class Device2Management extends AppCompatActivity {
                 }
             }
         });
-        binding.btnBack2.setOnClickListener(new View.OnClickListener() {
+        binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
