@@ -3228,14 +3228,14 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id btDevices
-id btOff
-id btOn
 id btReadings
+id btReadings2
 id btnAdd
 id btnBack
 id btnConn
 id btnConnect
+id btnOFF
+id btnON
 id btnSaveDevice
 id buttonPanel
 id cache_measures
@@ -3245,6 +3245,7 @@ id cardView
 id cardView2
 id cardView3
 id cardView4
+id cardView5
 id carryVelocity
 id center
 id centerCrop
@@ -3266,7 +3267,6 @@ id closest
 id collapseActionView
 id compress
 id confirm_button
-id connectToDevice
 id constraint
 id container
 id content
@@ -3321,7 +3321,6 @@ id east
 id edge
 id editTextName
 id editTextPin
-id editTextType
 id edit_query
 id elastic
 id emailText
@@ -3391,9 +3390,6 @@ id light
 id line1
 id line3
 id linear
-id linearLayout
-id linearLayout3
-id linearLayout4
 id listMode
 id list_item
 id loginRedirectText
@@ -3517,13 +3513,15 @@ id pin
 id position
 id postLayout
 id pressed
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id radioButton
+id radioButton2
 id ratio
 id rectangles
 id recyclerView
-id refresh
 id report_drawn
 id reverseSawtooth
 id right
@@ -3542,7 +3540,6 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
-id searchDevices
 id search_badge
 id search_bar
 id search_button
@@ -3618,9 +3615,8 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id textView2
-id textView3
-id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3787,6 +3783,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_new_device
+layout activity_device2_management
 layout activity_device_management
 layout activity_login
 layout activity_main

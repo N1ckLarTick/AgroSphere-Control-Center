@@ -3227,14 +3227,14 @@ int id browser_actions_menu_item_icon 0x7f080065
 int id browser_actions_menu_item_text 0x7f080066
 int id browser_actions_menu_items 0x7f080067
 int id browser_actions_menu_view 0x7f080068
-int id btDevices 0x7f080069
-int id btOff 0x7f08006a
-int id btOn 0x7f08006b
 int id btReadings 0x7f08006c
+int id btReadings2 0x7f080226
 int id btnAdd 0x7f08021c
 int id btnBack 0x7f080223
 int id btnConn 0x7f080225
 int id btnConnect 0x7f080224
+int id btnOFF 0x7f080227
+int id btnON 0x7f080228
 int id btnSaveDevice 0x7f08021d
 int id buttonPanel 0x7f08006d
 int id cache_measures 0x7f08006e
@@ -3244,6 +3244,7 @@ int id cardView 0x7f080071
 int id cardView2 0x7f080072
 int id cardView3 0x7f080073
 int id cardView4 0x7f080074
+int id cardView5 0x7f080229
 int id carryVelocity 0x7f080075
 int id center 0x7f080076
 int id centerCrop 0x7f080077
@@ -3265,7 +3266,6 @@ int id closest 0x7f080086
 int id collapseActionView 0x7f080087
 int id compress 0x7f080088
 int id confirm_button 0x7f080089
-int id connectToDevice 0x7f08008a
 int id constraint 0x7f08008b
 int id container 0x7f08008c
 int id content 0x7f08008d
@@ -3320,7 +3320,6 @@ int id east 0x7f0800bd
 int id edge 0x7f0800be
 int id editTextName 0x7f08021e
 int id editTextPin 0x7f08021f
-int id editTextType 0x7f080220
 int id edit_query 0x7f0800bf
 int id elastic 0x7f0800c0
 int id emailText 0x7f0800c1
@@ -3390,9 +3389,6 @@ int id light 0x7f080100
 int id line1 0x7f080101
 int id line3 0x7f080102
 int id linear 0x7f080103
-int id linearLayout 0x7f080104
-int id linearLayout3 0x7f080105
-int id linearLayout4 0x7f080106
 int id listMode 0x7f080107
 int id list_item 0x7f080108
 int id loginRedirectText 0x7f080109
@@ -3516,13 +3512,15 @@ int id pin 0x7f08017e
 int id position 0x7f08017f
 int id postLayout 0x7f080180
 int id pressed 0x7f080181
+int id progressBar 0x7f08022d
 int id progress_circular 0x7f080182
 int id progress_horizontal 0x7f080183
 int id radio 0x7f080184
+int id radioButton 0x7f08022b
+int id radioButton2 0x7f08022c
 int id ratio 0x7f080185
 int id rectangles 0x7f080186
 int id recyclerView 0x7f080222
-int id refresh 0x7f080188
 int id report_drawn 0x7f080189
 int id reverseSawtooth 0x7f08018a
 int id right 0x7f08018b
@@ -3541,7 +3539,6 @@ int id scrollIndicatorDown 0x7f080197
 int id scrollIndicatorUp 0x7f080198
 int id scrollView 0x7f080199
 int id scrollable 0x7f08019a
-int id searchDevices 0x7f08019b
 int id search_badge 0x7f08019c
 int id search_bar 0x7f08019d
 int id search_button 0x7f08019e
@@ -3617,9 +3614,8 @@ int id textSpacerNoButtons 0x7f0801e3
 int id textSpacerNoTitle 0x7f0801e4
 int id textStart 0x7f0801e5
 int id textTop 0x7f0801e6
+int id textView 0x7f08022a
 int id textView2 0x7f0801e7
-int id textView3 0x7f0801e8
-int id textView4 0x7f0801e9
 int id text_input_end_icon 0x7f0801ea
 int id text_input_error_icon 0x7f0801eb
 int id text_input_start_icon 0x7f0801ec
@@ -3786,6 +3782,7 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_add_new_device 0x7f0b006f
+int layout activity_device2_management 0x7f0b0071
 int layout activity_device_management 0x7f0b0070
 int layout activity_login 0x7f0b001c
 int layout activity_main 0x7f0b001d

@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -30,16 +32,25 @@ public final class ActivityAddNewDeviceBinding implements ViewBinding {
   public final EditText editTextPin;
 
   @NonNull
-  public final EditText editTextType;
+  public final RadioButton radioButton;
+
+  @NonNull
+  public final RadioButton radioButton2;
+
+  @NonNull
+  public final TextView textView2;
 
   private ActivityAddNewDeviceBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button btnSaveDevice, @NonNull EditText editTextName, @NonNull EditText editTextPin,
-      @NonNull EditText editTextType) {
+      @NonNull RadioButton radioButton, @NonNull RadioButton radioButton2,
+      @NonNull TextView textView2) {
     this.rootView = rootView;
     this.btnSaveDevice = btnSaveDevice;
     this.editTextName = editTextName;
     this.editTextPin = editTextPin;
-    this.editTextType = editTextType;
+    this.radioButton = radioButton;
+    this.radioButton2 = radioButton2;
+    this.textView2 = textView2;
   }
 
   @Override
@@ -87,14 +98,26 @@ public final class ActivityAddNewDeviceBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.editTextType;
-      EditText editTextType = ViewBindings.findChildViewById(rootView, id);
-      if (editTextType == null) {
+      id = R.id.radioButton;
+      RadioButton radioButton = ViewBindings.findChildViewById(rootView, id);
+      if (radioButton == null) {
+        break missingId;
+      }
+
+      id = R.id.radioButton2;
+      RadioButton radioButton2 = ViewBindings.findChildViewById(rootView, id);
+      if (radioButton2 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
         break missingId;
       }
 
       return new ActivityAddNewDeviceBinding((ConstraintLayout) rootView, btnSaveDevice,
-          editTextName, editTextPin, editTextType);
+          editTextName, editTextPin, radioButton, radioButton2, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

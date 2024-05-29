@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -33,6 +35,9 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
   public final Button btnConnect;
 
   @NonNull
+  public final CardView cardView5;
+
+  @NonNull
   public final TextView deviceName;
 
   @NonNull
@@ -41,18 +46,23 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
   @NonNull
   public final TextView deviceType;
 
+  @NonNull
+  public final ProgressBar progressBar;
+
   private ActivityDeviceManagementBinding(@NonNull ConstraintLayout rootView,
       @NonNull TextView btReadings, @NonNull Button btnBack, @NonNull Button btnConn,
-      @NonNull Button btnConnect, @NonNull TextView deviceName, @NonNull TextView devicePin,
-      @NonNull TextView deviceType) {
+      @NonNull Button btnConnect, @NonNull CardView cardView5, @NonNull TextView deviceName,
+      @NonNull TextView devicePin, @NonNull TextView deviceType, @NonNull ProgressBar progressBar) {
     this.rootView = rootView;
     this.btReadings = btReadings;
     this.btnBack = btnBack;
     this.btnConn = btnConn;
     this.btnConnect = btnConnect;
+    this.cardView5 = cardView5;
     this.deviceName = deviceName;
     this.devicePin = devicePin;
     this.deviceType = deviceType;
+    this.progressBar = progressBar;
   }
 
   @Override
@@ -106,6 +116,12 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cardView5;
+      CardView cardView5 = ViewBindings.findChildViewById(rootView, id);
+      if (cardView5 == null) {
+        break missingId;
+      }
+
       id = R.id.device_name;
       TextView deviceName = ViewBindings.findChildViewById(rootView, id);
       if (deviceName == null) {
@@ -124,8 +140,14 @@ public final class ActivityDeviceManagementBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       return new ActivityDeviceManagementBinding((ConstraintLayout) rootView, btReadings, btnBack,
-          btnConn, btnConnect, deviceName, devicePin, deviceType);
+          btnConn, btnConnect, cardView5, deviceName, devicePin, deviceType, progressBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

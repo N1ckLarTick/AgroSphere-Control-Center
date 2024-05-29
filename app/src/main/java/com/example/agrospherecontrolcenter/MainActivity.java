@@ -129,12 +129,6 @@ public class MainActivity extends AppCompatActivity {
                 int position = viewHolder.getAdapterPosition();
                 Device device = arrayAdapter.getDevices().get(position);
                 showAlert(device);
-//                new Thread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        repository.deviceDao().remove(device.getId());
-//                    }
-//                }).start();
             }
         });
         itemTouchHelper.attachToRecyclerView(binding.recyclerView);
@@ -161,6 +155,22 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Begin Execution");
         checkPermissions();
         addListData();
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user==null){
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else{
+            binding.emailText.setText(user.getEmail());
+        }
+        binding.logoutbutton.setOnClickListener(view->{
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
     private void addListData(){
         binding.btnAdd.setOnClickListener(new View.OnClickListener() {

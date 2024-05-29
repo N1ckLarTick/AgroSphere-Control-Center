@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -20,298 +20,38 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final View rootView;
+  private final ConstraintLayout rootView;
 
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final TextView btDevices;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button btOff;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button btOn;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final TextView btReadings;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   */
-  @Nullable
+  @NonNull
   public final FloatingActionButton btnAdd;
 
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button connectToDevice;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
+  @NonNull
   public final TextView emailText;
 
   @NonNull
-  public final View linearLayout;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final LinearLayout linearLayout3;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final LinearLayout linearLayout4;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
   public final Button logoutbutton;
 
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   */
-  @Nullable
+  @NonNull
   public final RecyclerView recyclerView;
 
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button refresh;
+  @NonNull
+  public final TextView textView;
 
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final Button searchDevices;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final TextView textView2;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final TextView textView3;
-
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   */
-  @Nullable
-  public final TextView textView4;
-
-  private ActivityMainBinding(@NonNull View rootView, @Nullable TextView btDevices,
-      @Nullable Button btOff, @Nullable Button btOn, @Nullable TextView btReadings,
-      @Nullable FloatingActionButton btnAdd, @Nullable Button connectToDevice,
-      @Nullable TextView emailText, @NonNull View linearLayout,
-      @Nullable LinearLayout linearLayout3, @Nullable LinearLayout linearLayout4,
-      @Nullable Button logoutbutton, @Nullable RecyclerView recyclerView, @Nullable Button refresh,
-      @Nullable Button searchDevices, @Nullable TextView textView2, @Nullable TextView textView3,
-      @Nullable TextView textView4) {
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+      @NonNull FloatingActionButton btnAdd, @NonNull TextView emailText,
+      @NonNull Button logoutbutton, @NonNull RecyclerView recyclerView,
+      @NonNull TextView textView) {
     this.rootView = rootView;
-    this.btDevices = btDevices;
-    this.btOff = btOff;
-    this.btOn = btOn;
-    this.btReadings = btReadings;
     this.btnAdd = btnAdd;
-    this.connectToDevice = connectToDevice;
     this.emailText = emailText;
-    this.linearLayout = linearLayout;
-    this.linearLayout3 = linearLayout3;
-    this.linearLayout4 = linearLayout4;
     this.logoutbutton = logoutbutton;
     this.recyclerView = recyclerView;
-    this.refresh = refresh;
-    this.searchDevices = searchDevices;
-    this.textView2 = textView2;
-    this.textView3 = textView3;
-    this.textView4 = textView4;
+    this.textView = textView;
   }
 
   @Override
   @NonNull
-  public View getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -336,63 +76,38 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btDevices;
-      TextView btDevices = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.btOff;
-      Button btOff = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.btOn;
-      Button btOn = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.btReadings;
-      TextView btReadings = ViewBindings.findChildViewById(rootView, id);
-
       id = R.id.btnAdd;
       FloatingActionButton btnAdd = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.connectToDevice;
-      Button connectToDevice = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.emailText;
-      TextView emailText = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.linearLayout;
-      View linearLayout = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayout == null) {
+      if (btnAdd == null) {
         break missingId;
       }
 
-      id = R.id.linearLayout3;
-      LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.linearLayout4;
-      LinearLayout linearLayout4 = ViewBindings.findChildViewById(rootView, id);
+      id = R.id.emailText;
+      TextView emailText = ViewBindings.findChildViewById(rootView, id);
+      if (emailText == null) {
+        break missingId;
+      }
 
       id = R.id.logoutbutton;
       Button logoutbutton = ViewBindings.findChildViewById(rootView, id);
+      if (logoutbutton == null) {
+        break missingId;
+      }
 
       id = R.id.recyclerView;
       RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerView == null) {
+        break missingId;
+      }
 
-      id = R.id.refresh;
-      Button refresh = ViewBindings.findChildViewById(rootView, id);
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
+        break missingId;
+      }
 
-      id = R.id.searchDevices;
-      Button searchDevices = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.textView3;
-      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
-
-      id = R.id.textView4;
-      TextView textView4 = ViewBindings.findChildViewById(rootView, id);
-
-      return new ActivityMainBinding(rootView, btDevices, btOff, btOn, btReadings, btnAdd,
-          connectToDevice, emailText, linearLayout, linearLayout3, linearLayout4, logoutbutton,
-          recyclerView, refresh, searchDevices, textView2, textView3, textView4);
+      return new ActivityMainBinding((ConstraintLayout) rootView, btnAdd, emailText, logoutbutton,
+          recyclerView, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -100,23 +100,14 @@ public class DeviceManagement extends AppCompatActivity {
 
                 String dataToSend = "SET_PIN_MODE:" + device.getPin() + ":INPUT";
                 connectedThread.write(dataToSend);
-
                 connectedThread.cancel();
             }
 
             connectThread.cancel();
 
             emitter.onComplete();
-
         });
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
             return;
         }
         Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();

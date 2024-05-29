@@ -12,8 +12,8 @@
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\layout\\activity_add_new_device.xml"
     },
     {
-        "merged": "com.example.agrospherecontrolcenter.app-mergeDebugResources-41:/layout/activity_device_management.xml",
-        "source": "com.example.agrospherecontrolcenter.app-main-44:/layout/activity_device_management.xml"
+        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-41:\\layout\\activity_device2_management.xml",
+        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\layout\\activity_device2_management.xml"
     },
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-41:\\layout\\activity_main.xml",
@@ -22,6 +22,10 @@
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-41:\\layout\\activity_login.xml",
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "com.example.agrospherecontrolcenter.app-mergeDebugResources-41:/layout/activity_main.xml",
+        "source": "com.example.agrospherecontrolcenter.app-main-44:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-mergeDebugResources-41:\\layout\\activity_registration.xml",

@@ -44,12 +44,12 @@
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xhdpi\\ic_logo.webp"
     },
     {
-        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xhdpi_ic_plus.webp.flat",
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xhdpi\\ic_plus.webp"
+    },
+    {
+        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -208,6 +208,10 @@
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\layout-land\\activity_registration.xml"
     },
     {
+        "merged": "com.example.agrospherecontrolcenter.app-merged_res-42:/layout-land_activity_main.xml.flat",
+        "source": "com.example.agrospherecontrolcenter.app-main-44:/layout-land/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\layout_activity_add_new_device.xml.flat",
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\layout\\activity_add_new_device.xml"
     },
@@ -218,10 +222,6 @@
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\layout-land_activity_main.xml.flat",
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\layout-land\\activity_main.xml"
-    },
-    {
-        "merged": "com.example.agrospherecontrolcenter.app-merged_res-42:/layout_activity_device_management.xml.flat",
-        "source": "com.example.agrospherecontrolcenter.app-main-44:/layout/activity_device_management.xml"
     },
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\layout_device_item.xml.flat",
@@ -250,6 +250,10 @@
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\layout_activity_device2_management.xml.flat",
+        "source": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-main-44:\\layout\\activity_device2_management.xml"
     },
     {
         "merged": "C:\\Users\\nickl\\.gradle\\daemon\\8.0\\com.example.agrospherecontrolcenter.app-merged_res-42:\\mipmap-xxhdpi_ic_logo_round.webp.flat",
